@@ -21,7 +21,7 @@ This repo contains the Pytorch implementation of our paper:
 > [**GTA-Crime videos on Google Drive**](drive link)
 
 **Extracted I3d and CLIP features for GTA-Crime dataset**
-> [**GTA-Crime i3d features on Google Drive**](drive link)
+> [**GTA-Crime i3d features on Google Drive**](https://drive.google.com/file/d/1lJax_N3Nee7pOd7f7Xq_m17CvxcZKBwD/view?usp=drive_link)
 > 
 > [**GTA-Crime CLIP features on Google Drive**](drive link)
 
