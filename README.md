@@ -18,12 +18,12 @@ This repo contains the Pytorch implementation of our paper:
 
 **Please download the GTA-Crime dataset from links below:**
 
-> [**GTA-Crime videos on Google Drive**](https://drive.google.com/file/d/14mA5jgSIlfGdE6P-PgOr0bFCOyDSxGhc/view?usp=drive_link)
+> [**GTA-Crime videos on Google Drive**](https://drive.google.com/file/d/14mA5jgSIlfGdE6P-PgOr0bFCOyDSxGhc/view?usp=sharing)
 
 **Extracted I3d and CLIP features for GTA-Crime dataset**
-> [**GTA-Crime i3d features on Google Drive**](https://drive.google.com/file/d/14CQoSPS0iRwkTfA8AHcLwImruuUPAUdu/view?usp=drive_link)
+> [**GTA-Crime i3d features on Google Drive**](https://drive.google.com/file/d/14CQoSPS0iRwkTfA8AHcLwImruuUPAUdu/view?usp=sharing)
 > 
-> [**GTA-Crime CLIP features on Google Drive**](https://drive.google.com/file/d/1fK5B5tJ-dVDSsS8LLawF2hecnMXfBouI/view?usp=drive_link)
+> [**GTA-Crime CLIP features on Google Drive**](https://drive.google.com/file/d/1fK5B5tJ-dVDSsS8LLawF2hecnMXfBouI/view?usp=sharing)
 
 **We use the extracted I3D and CLIP features for UCF-Crime datasets from the following works:**
 > [**UCF-Crime 10-crop I3D features**](https://github.com/Roc-Ng/DeepMIL)
