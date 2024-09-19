@@ -49,36 +49,34 @@ The code for stage 1 of our method can be found in the directory ```stage1```. T
     cd stage1/cycgan
     python ucf_each.py
     ```
-After training is completed, the weights of the feature adaptor are used in stage2.
 
 ## Stage2. VAD model training and testing
-The code for each model in stage2 is in derectory ```stage2```. To train each model with ucf3 features and adapted gta features, run the code below
+The code for each model in stage2 is in derectory ```stage2```. To train on Video Anomaly Detection(WVAD) model, place the model trained on WGAN-GP/CycleGAN (from stage 1) to ```stage2/VadCLIP/weights```. Then, run the code below
 - VadCLIP
-  ```
-  cd/stage2/VadCLIP
-  python ./src/ucf_train.py
-  ```
+    ```
+    cd/stage2/VadCLIP
+    python ./src/ucf_train.py
+    ```
 - CLIP-TSA
-  ```
-  cd/stage2/CLIP-TSA
-  python main.py
-  ```
+    ```
+    cd/stage2/CLIP-TSA
+    python main.py
+    ```
 - RTFM
-  ```
-  cd/stage2/RTFM
-  python main.py
-  ```
+    ```
+    cd/stage2/RTFM
+    python main.py
+    ```
 - UR-DMU
-  ```
-  cd/stage2/UR-DMU
-  python ucf_main.py
-  ```
+    ```
+    cd/stage2/UR-DMU
+    python ucf_main.py
+    ```
 - MGFN
-  ```
-  cd/stage2/MGFN
-  python main.py
-  ```
-
+    ```
+    cd/stage2/MGFN
+    python main.py
+    ```
 
 ## Result on VAD models (AUC)
 | Method  |    UCF    | UCF+GTA(w/o DA)|UCF+GTA(w/ WGAN-GP)|UCF+GTA(w/ CycleGAN)|
