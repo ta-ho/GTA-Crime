@@ -7,16 +7,16 @@
 - Visual Studio
 - others managed by Nuget
 
-  ## Build C# code
-  - Git clone construction code
-  - Open .sin code in Visual Studio
-  - Right click Solution 'GTACrime' itself and go to: properties -> Configuration Properties and set the configuration to Release for x64
-  - Right click solution and click Build Solution
-  - The necessary files are created in './GTACrime/bin/x64/Release'.
+## Build C# code
+- Git clone construction code
+- Open .sin code in Visual Studio
+- Right click Solution 'GTACrime' itself and go to: properties -> Configuration Properties and set the configuration to Release for x64
+- Right click solution and click Build Solution
+- The necessary files are created in './GTACrime/bin/x64/Release'.
  
-  ## Preparation before launching GTA5
-  - install Grand Theft Auto V
-  - copy 'ScriptHookV', 'ScriptHookVDotNet V3' files and Menyoo GTA5 trainer folder to 'Grand Theft Auto V' folder
-  - make 'Scripts' folder in 'Grand Theft Auto V' folder
-  - copy 'GTAVisionNative' files and necessary files created from construction code to 'Scripts' folder
-  - set 'gta_config.ini' file and copy to 'Scripts' folder
+## Preparation before launching GTA5
+- install Grand Theft Auto V
+- copy 'ScriptHookV', 'ScriptHookVDotNet V3' files and Menyoo GTA5 trainer folder to 'Grand Theft Auto V' folder
+- make 'Scripts' folder in 'Grand Theft Auto V' folder
+- copy 'GTAVisionNative' files and necessary files created from construction code to 'Scripts' folder
+- set 'gta_config.ini' file and copy to 'Scripts' folder
