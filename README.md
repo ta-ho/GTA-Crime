@@ -44,7 +44,7 @@ The code for stage 1 of our method can be found in the directory ```stage1```. T
     cd stage1/wgan_gp
     python main.py
     ```
-- using WGAN-GP loss
+- using CycleGAN loss
     ```
     cd stage1/cycgan
     python ucf_each.py
