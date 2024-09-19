@@ -15,8 +15,8 @@
 - The necessary files are created in './GTACrime/bin/x64/Release'.
  
 ## Preparation before simulating GTA5
-- install Grand Theft Auto V
-- copy 'ScriptHookV', 'ScriptHookVDotNet V3' files and Menyoo GTA5 trainer folder to 'Grand Theft Auto V' folder
-- make 'Scripts' folder in 'Grand Theft Auto V' folder
-- copy 'GTAVisionNative' files and necessary files created from construction code to 'Scripts' folder
-- set 'gta_config.ini' file and copy to 'Scripts' folder
+- Install Grand Theft Auto V
+- Copy 'ScriptHookV', 'ScriptHookVDotNet V3' files and Menyoo GTA5 trainer folder to 'Grand Theft Auto V' folder
+- Make 'Scripts' folder in 'Grand Theft Auto V' folder
+- Copy 'GTAVisionNative' files and necessary files created from construction code to 'Scripts' folder
+- Set 'gta_config.ini' file and copy to 'Scripts' folder
