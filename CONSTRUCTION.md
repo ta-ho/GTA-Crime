@@ -14,7 +14,7 @@
 - Right click solution and click Build Solution
 - The necessary files are created in './GTACrime/bin/x64/Release'.
  
-## Preparation before launching GTA5
+## Preparation before simulating GTA5
 - install Grand Theft Auto V
 - copy 'ScriptHookV', 'ScriptHookVDotNet V3' files and Menyoo GTA5 trainer folder to 'Grand Theft Auto V' folder
 - make 'Scripts' folder in 'Grand Theft Auto V' folder
