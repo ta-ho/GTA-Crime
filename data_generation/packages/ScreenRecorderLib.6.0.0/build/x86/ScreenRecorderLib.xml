@@ -1,0 +1,712 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "ScreenRecorderLib"
+    </assembly>
+    <members>
+        <member name="M:ScreenRecorderLib.DynamicOptionsBuilder.Apply">
+            <summary>
+Apply the changes to the current active recording. Fails if no recording is in progress.
+</summary>
+            <returns>True if successfully applied changes to a recording in progress, else false</returns>
+        </member>
+        <member name="M:ScreenRecorderLib.DynamicOptionsBuilder.SetVideoCaptureEnabledForOverlay(System.String,System.Boolean)">
+            <summary>
+Configure if video capture is enabled for the overlay with the given ID.
+</summary>
+            <param name="overlayID">ID for a recording source in progress</param>
+            <param name="isCaptureEnabled">If false, the overlay will be blacked out for the duration.</param>
+            <returns />
+        </member>
+        <member name="M:ScreenRecorderLib.DynamicOptionsBuilder.SetVideoCaptureEnabledForRecordingSource(System.String,System.Boolean)">
+            <summary>
+Configure if video capture is enabled for the recording source with the given ID.
+</summary>
+            <param name="recordingSourceID">ID for a recording source in progress</param>
+            <param name="isCaptureEnabled">If false, the source will be blacked out for the duration.</param>
+            <returns />
+        </member>
+        <member name="M:ScreenRecorderLib.DynamicOptionsBuilder.SetAnchorForOverlay(System.String,ScreenRecorderLib.Anchor)">
+            <summary>
+Set the position anchor for the overlay with the given ID.
+</summary>
+            <param name="overlayID">ID for an overlay in progress</param>
+            <param name="anchor">Where to anchor the overlay</param>
+            <returns />
+        </member>
+        <member name="M:ScreenRecorderLib.DynamicOptionsBuilder.SetOffsetForOverlay(System.String,ScreenRecorderLib.ScreenSize)">
+            <summary>
+Set the position offset of the overlay with the given ID.
+</summary>
+            <param name="overlayID">ID for an overlay in progress</param>
+            <param name="offset">The offset for the overlay, relative to the configured Anchor.</param>
+            <returns />
+        </member>
+        <member name="M:ScreenRecorderLib.DynamicOptionsBuilder.SetSizeForOverlay(System.String,ScreenRecorderLib.ScreenSize)">
+            <summary>
+Set the size of the overlay with the given ID.
+</summary>
+            <param name="overlayID">ID for a recording source in progress</param>
+            <param name="size">The size of the overlay in pixels</param>
+            <returns />
+        </member>
+        <member name="M:ScreenRecorderLib.DynamicOptionsBuilder.SetCursorCaptureForOverlay(System.String,System.Boolean)">
+            <summary>
+Enable or disable mouse cursor capture for the recording overlay with the given ID.
+</summary>
+            <param name="recordingSourceID">ID for a recording source in progress</param>
+            <param name="isCursorCaptureEnabled" />
+            <returns />
+        </member>
+        <member name="M:ScreenRecorderLib.DynamicOptionsBuilder.SetCursorCaptureForRecordingSource(System.String,System.Boolean)">
+            <summary>
+Enable or disable mouse cursor capture for the recording source with the given ID.
+</summary>
+            <param name="recordingSourceID">ID for a recording source in progress</param>
+            <param name="isCursorCaptureEnabled" />
+            <returns />
+        </member>
+        <member name="M:ScreenRecorderLib.DynamicOptionsBuilder.SetSourceRectForRecordingSource(System.String,ScreenRecorderLib.ScreenRect)">
+            <summary>
+Set the source rect (crop) for a recording source with the given ID.
+</summary>
+            <param name="recordingSourceID">ID for a recording source in progress</param>
+            <param name="sourceRect" />
+            <returns />
+        </member>
+        <member name="M:ScreenRecorderLib.Recorder.GetDynamicOptionsBuilder">
+            <summary>
+DynamicOptionsBuilder can be used to update a subset of options while a recording is in progress.
+</summary>
+            <returns />
+        </member>
+        <member name="P:ScreenRecorderLib.LogOptions.LogSeverityLevel">
+            <summary>
+The maximum level of the logs to write.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.LogOptions.LogFilePath">
+            <summary>
+A path to a file to write logs to. If this is not empty, all logs will be redirected to it.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.LogOptions.IsLogEnabled">
+            <summary>
+Toggles logging. Default is on when debugging, off in release mode, this setting overrides it.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.MouseOptions.MouseClickDetectionMode">
+            <summary>
+The mode for detecting mouse clicks. Default is Polling.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DynamicMouseOptions.MouseClickDetectionDuration">
+            <summary>
+The duration of the dot shown where the mouse button is pressed, in milliseconds. Default is 150.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DynamicMouseOptions.MouseClickDetectionRadius">
+            <summary>
+The radius of the dot where the mouse button is pressed. Default is 20.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DynamicMouseOptions.MouseRightClickDetectionColor">
+            <summary>
+The color of the dot where the right mouse button is pressed, in hex format. Default is Yellow (#FFFF00).
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DynamicMouseOptions.MouseLeftClickDetectionColor">
+            <summary>
+The color of the dot where the left mouse button is pressed, in hex format. Default is Yellow (#FFFF00).
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DynamicMouseOptions.IsMouseClicksDetected">
+            <summary>
+Display a colored dot where the left mouse button is pressed.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DynamicMouseOptions.IsMousePointerEnabled">
+            <summary>
+Display the mouse cursor on the recording
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.AudioOptions.AudioInputDevice">
+            <summary>
+Audio input device (e.g. microphone) to capture audio from. Pass null or empty string to select system default.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.AudioOptions.AudioOutputDevice">
+            <summary>
+Audio device to capture system audio from via loopback capture. Pass null or empty string to select system default.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.AudioOptions.IsAudioEnabled">
+            <summary>
+Enable or disable the writing of an audio track for the recording.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DynamicAudioOptions.OutputVolume">
+            <summary>
+Volume of the output stream. Recommended values are between 0 and 1.
+Value of 0 mutes the stream and value of 1 makes it original volume.
+This value can be changed after the recording is started with SetOutputVolume() method.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DynamicAudioOptions.InputVolume">
+            <summary>
+Volume of the input stream. Recommended values are between 0 and 1.
+Value of 0 mutes the stream and value of 1 makes it original volume.
+This value can be changed after the recording is started with SetInputVolume() method.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DynamicAudioOptions.IsInputDeviceEnabled">
+            <summary>
+Enable to record system audio input (e.g. microphone)
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DynamicAudioOptions.IsOutputDeviceEnabled">
+            <summary>
+Enable to record system audio output.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.SnapshotOptions.SnapshotsDirectory">
+            <summary>
+Directory to store snapshots. If not set, the directory of the output file is used.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.SnapshotOptions.SnapshotsIntervalMillis">
+            <summary>
+Interval in milliseconds between images in slideshows, or snapshots in a video recording.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.SnapshotOptions.SnapshotsWithVideo">
+            <summary>
+Whether to take snapshots in a video recording. This is only used with Video mode.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.SnapshotOptions.SnapshotFormat">
+            <summary>
+Image format for snapshots. This is used with Screenshot, Slideshow, and video with SnapshotsWithVideo enabled.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.VideoEncoderOptions.Encoder">
+            <summary>
+Set the video encoder to use. Current supported encoders are H264VideoEncoder and H265VideoEncoder.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.VideoEncoderOptions.IsFragmentedMp4Enabled">
+            <summary>
+Fragments the video into a list of individually playable blocks. This allows playback of video segments that has no end, i.e. live streaming.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.VideoEncoderOptions.IsMp4FastStartEnabled">
+            <summary>
+Place the mp4 header at the start of the file instead of the end. This allows streaming to start before entire file is downloaded.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.VideoEncoderOptions.IsHardwareEncodingEnabled">
+            <summary>
+Enable hardware encoding if available. This is enabled by default.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.VideoEncoderOptions.IsLowLatencyEnabled">
+            <summary>
+Faster rendering, but can affect quality. Use when speed is more important than quality.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.VideoEncoderOptions.IsThrottlingDisabled">
+            <summary>
+Disable throttling of video renderer. If this is disabled, all frames are sent to renderer as fast as they come. Can cause out of memory crashes.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.VideoEncoderOptions.IsFixedFramerate">
+            <summary>
+Send data to the video encoder every frame, even if it means duplicating the previous frame(s). Can fix stutter issues in fringe cases, but uses more resources.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.VideoEncoderOptions.Quality">
+            <summary>
+Video quality. This is only used when BitrateMode is set to Quality.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.VideoEncoderOptions.Bitrate">
+            <summary>
+Bitrate in bits per second
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.VideoEncoderOptions.Framerate">
+            <summary>
+Framerate in frames per second.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.OutputOptions.OutputFrameSize">
+            <summary>
+The frame size of the output in pixels.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.OutputOptions.Stretch">
+            <summary>
+How the output should be stretched to fill the destination rectangle.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DynamicOutputOptions.IsVideoCaptureEnabled">
+            <summary>
+Controls whether the video output is recorded. If false, only audio is recorded if enabled, and video will be black.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DynamicOutputOptions.SourceRect">
+            <summary>
+The part of the output to record. Null or empty records the entire source area, else the output is cropped to the rectangle.
+</summary>
+        </member>
+        <member name="F:ScreenRecorderLib.RecorderMode.Screenshot">
+            <summary>Create a single screenshot.</summary>
+        </member>
+        <member name="F:ScreenRecorderLib.RecorderMode.Slideshow">
+            <summary>Record a slideshow of pictures. </summary>
+        </member>
+        <member name="F:ScreenRecorderLib.RecorderMode.Video">
+            <summary>Record to mp4 container in H.264/AVC or H.265/HEVC format. </summary>
+        </member>
+        <member name="F:ScreenRecorderLib.MouseDetectionMode.Hook">
+            <summary>
+Use a low level system hook for detecting mouse clicks. Works more reliably for programmatic events, but can negatively affect mouse performance while recording.
+</summary>
+        </member>
+        <member name="F:ScreenRecorderLib.MouseDetectionMode.Polling">
+            <summary>
+Use polling for detecting mouse clicks. Does not affect mouse performance, but may not work for all mouse clicks generated programmatically.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.H265VideoEncoder.BitrateMode">
+            <summary>
+The bitrate control mode of the video encoder. Default is Quality.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.H265VideoEncoder.EncoderProfile">
+            <summary>
+The capabilities the h265 video encoder. At the moment only Main is supported
+</summary>
+        </member>
+        <member name="T:ScreenRecorderLib.H265VideoEncoder">
+            <summary>
+Encode video with H265/HEVC encoder.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.H264VideoEncoder.BitrateMode">
+            <summary>
+The bitrate control mode of the video encoder. Default is Quality.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.H264VideoEncoder.EncoderProfile">
+            <summary>
+The capabilities the h264 video encoder. 
+Lesser profiles may increase playback compatibility and use less resources with older decoders and hardware at the cost of quality.
+</summary>
+        </member>
+        <member name="T:ScreenRecorderLib.H264VideoEncoder">
+            <summary>
+Encode video with H264 encoder.
+</summary>
+        </member>
+        <member name="F:ScreenRecorderLib.VideoEncoderFormat.H265">
+            <summary>H.265/HEVC encoder. </summary>
+        </member>
+        <member name="F:ScreenRecorderLib.VideoEncoderFormat.H264">
+            <summary>H.264/AVC encoder. </summary>
+        </member>
+        <member name="F:ScreenRecorderLib.H265BitrateControlMode.Quality">
+            <summary>Quality-based VBR encoding. The encoder selects the bit rate to match a specified quality level. Set Quality level in VideoEncoderOptions from 1-100. Default is 70. </summary>
+        </member>
+        <member name="F:ScreenRecorderLib.H265BitrateControlMode.CBR">
+            <summary>Constant bitrate. Faster encoding than VBR, but produces larger files with consistent size. This setting might not work on software encoding. </summary>
+        </member>
+        <member name="F:ScreenRecorderLib.H264BitrateControlMode.Quality">
+            <summary>Quality-based VBR encoding. The encoder selects the bit rate to match a specified quality level. Set Quality level in VideoEncoderOptions from 1-100. Default is 70. </summary>
+        </member>
+        <member name="F:ScreenRecorderLib.H264BitrateControlMode.UnconstrainedVBR">
+            <summary>Default is unconstrained variable bitrate. Overall bitrate will average towards the Bitrate property, but can fluctuate greatly over and under it.</summary>
+        </member>
+        <member name="F:ScreenRecorderLib.H264BitrateControlMode.CBR">
+            <summary>Constant bitrate. Faster encoding than VBR, but produces larger files with consistent size. This setting might not work on software encoding. </summary>
+        </member>
+        <member name="P:ScreenRecorderLib.WindowOverlay.IsCursorCaptureEnabled">
+            <summary>
+This option determines if the mouse cursor is recorded for this source. Defaults to true.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DisplayOverlay.IsCursorCaptureEnabled">
+            <summary>
+This option determines if the mouse cursor is recorded for this source. Defaults to true.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.RecordingOverlayBase.Offset">
+            <summary>
+This option can be configured to position the overlay within the output frame.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.RecordingOverlayBase.Size">
+            <summary>
+This option can be configured to set the size of this overlay in pixels.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.RecordingOverlayBase.AnchorPoint">
+            <summary>
+The point on the parent frame where the overlay anchors to.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.RecordingOverlayBase.Stretch">
+            <summary>
+Gets or sets a value that describes how an overlay should be stretched to fill the destination rectangle.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.RecordingOverlayBase.ID">
+            <summary>
+A unique generated ID for this recording source.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.ImageRecordingSource.SourcePath">
+            <summary>
+The file path to the video
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.VideoRecordingSource.SourcePath">
+            <summary>
+The file path to the video
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.VideoCaptureRecordingSource.DeviceName">
+            <summary>
+The device name to record
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DisplayRecordingSource.IsBorderRequired">
+            <summary>
+Gets or sets a value specifying whether a Windows Graphics Capture operation requires a colored border around the window or display to indicate that a capture is in progress.
+Requires Windows 11.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DisplayRecordingSource.IsCursorCaptureEnabled">
+            <summary>
+This option determines if the mouse cursor is recorded for this source. Defaults to true.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.DisplayRecordingSource.DeviceName">
+            <summary>
+The device name to record, e.g. \\\\.\\DISPLAY1
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.WindowRecordingSource.IsBorderRequired">
+            <summary>
+Gets or sets a value specifying whether a Windows Graphics Capture operation requires a colored border around the window or display to indicate that a capture is in progress.
+Requires Windows 11.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.WindowRecordingSource.IsCursorCaptureEnabled">
+            <summary>
+This option determines if the mouse cursor is recorded for this source. Defaults to true.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.WindowRecordingSource.Handle">
+            <summary>
+The handle to the window to record.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.RecordingSourceBase.Stretch">
+            <summary>
+Gets or sets a value that describes how a recording source should be stretched to fill the destination rectangle.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.RecordingSourceBase.AnchorPoint">
+            <summary>
+The point where the source anchors to.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.RecordingSourceBase.Position">
+            <summary>
+This option can be configured to position the source frame within the output frame.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.RecordingSourceBase.OutputSize">
+            <summary>
+This option can be configured to set the frame size of this source in pixels.
+</summary>
+        </member>
+        <member name="P:ScreenRecorderLib.RecordingSourceBase.ID">
+            <summary>
+A unique generated ID for this recording source.
+</summary>
+        </member>
+        <member name="F:ScreenRecorderLib.RecorderApi.WindowsGraphicsCapture">
+            <summary>WindowsGraphicsCapture requires Windows 10 version 1803 or higher. This API supports recording windows in addition to screens.</summary>
+        </member>
+        <member name="F:ScreenRecorderLib.RecorderApi.DesktopDuplication">
+            <summary>Desktop Duplication is supported on all Windows 8 and 10 versions. This API supports recording of screens.</summary>
+        </member>
+        <member name="T:ScreenRecorderLib.StretchMode">
+            <summary>
+Describes how content is resized to fill its allocated space.
+</summary>
+        </member>
+        <member name="F:ScreenRecorderLib.StretchMode.UniformToFill">
+            <summary />
+        </member>
+        <member name="F:ScreenRecorderLib.StretchMode.Uniform">
+            <summary>The content is resized to fit in the destination dimensions while it preserves its native aspect ratio.</summary>
+        </member>
+        <member name="F:ScreenRecorderLib.StretchMode.Fill">
+            <summary>The content is resized to fill the destination dimensions. The aspect ratio is not preserved. </summary>
+        </member>
+        <member name="F:ScreenRecorderLib.StretchMode.None">
+            <summary>The content preserves its original size. </summary>
+        </member>
+        <member name="M:RecordingManager.SetRecordingCompleteStatus(REC_RESULT,nlohmann.fifo_map&lt;std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;,System.Int32,nlohmann.fifo_map_compare&lt;std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;&gt;,std.allocator&lt;std.pair&lt;std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst,System.Int32&gt;&gt;&gt;)">
+            <summary>
+Calls the RecordingComplete or RecordingFailed callbacks depending on the success of the recording result.
+</summary>
+            <param name="result">The recording result.</param>
+            <param name="frameDelays">A map of paths to saved frames with corresponding delay between them. Only used for Slideshow mode.</param>
+        </member>
+        <member name="M:RecordingManager.CleanupDxResources">
+            <summary>
+Releases DirectX resources and reports any leaks
+</summary>
+        </member>
+        <member name="M:RecordingManager.ProcessTextureTransforms(ID3D11Texture2D*,ID3D11Texture2D**,tagRECT,tagSIZE)">
+            <summary>
+Perform cropping and resizing on texture if needed.
+</summary>
+            <param name="pTexture">The texture to process</param>
+            <param name="ppProcessedTexture">The output texture. If no transformations are done, the original texture is returned.</param>
+            <param name="videoInputFrameRect">The source rectangle. The texture will be cropped to these coordinates if larger.</param>
+            <param name="videoOutputFrameSize">The output dimensions. The texture will be resized to these coordinates if differing.</param>
+            <returns>S_OK if any processing has been done, S_FALSE if no changes, else an error code</returns>
+        </member>
+        <member name="M:RecordingManager.ProcessTexture(ID3D11Texture2D*,ID3D11Texture2D**,std.optional&lt;PTR_INFO&gt;)">
+            <summary>
+Adds overlays, mouse cursors, and texture transforms.
+</summary>
+            <param name="pTexture">The texture to process</param>
+            <param name="pPtrInfo">Mouse pointer info (optional).</param>
+            <param name="ppProcessedTexture">The output texture.</param>
+            <returns>S_OK if any processing has been done, S_FALSE if no changes, else an error code</returns>
+        </member>
+        <member name="M:RecordingManager.SaveTextureAsVideoSnapshotAsync(ID3D11Texture2D*,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;,tagRECT,std.function&lt;(System.Int32!System.Runtime.CompilerServices.IsLong)(System.Int32!System.Runtime.CompilerServices.IsLong)&gt;)">
+            <summary>
+Save texture as snapshot image async.
+</summary>
+            <param name="pTexture">The texture to save to a snapshot</param>
+            <param name="sourceRect">The area of the texture to save. If the texture is larger, it will be cropped to these coordinates.</param>
+            <returns />
+        </member>
+        <member name="M:RecordingManager.SaveTextureAsVideoSnapshot(ID3D11Texture2D*,IStream*,tagRECT)">
+            <summary>
+Save texture as snapshot image.
+</summary>
+            <param name="pTexture">The texture to save to a snapshot</param>
+            <param name="pStream">A stream to save the snapshot to</param>
+            <param name="sourceRect">The area of the texture to save. If the texture is larger, it will be cropped to these coordinates.</param>
+            <returns />
+        </member>
+        <member name="M:RecordingManager.SaveTextureAsVideoSnapshot(ID3D11Texture2D*,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;,tagRECT)">
+            <summary>
+Save texture as snapshot image.
+</summary>
+            <param name="pTexture">The texture to save to a snapshot</param>
+            <param name="snapshotPath">A file path to save the snapshot to</param>
+            <param name="sourceRect">The area of the texture to save. If the texture is larger, it will be cropped to these coordinates.</param>
+            <returns />
+        </member>
+        <member name="M:RecordingManager.InitializeRects(tagSIZE,tagRECT*,tagSIZE*)">
+            <summary>
+Creates adjusted source and output rects from a recording frame rect. The source rect is normalized to start on [0,0], and the output is adjusted for any cropping.
+</summary>
+            <param name="outputSize">The recording output size</param>
+            <param name="pAdjustedSourceRect">The source rect adjusted to start on [0,0] and with custom cropping if any</param>
+            <param name="pAdjustedOutputFrameSize">The destination rect adjusted to start on [0,0] and with custom render size if any</param>
+            <returns />
+        </member>
+        <member name="M:CaptureBase.GetContentOffset(ContentAnchor,tagRECT,tagRECT)">
+            <summary>
+Calculate the offset used to position the content withing the parent frame based on the given anchor.
+</summary>
+            <param name="anchor" />
+            <param name="parentRect" />
+            <param name="contentRect" />
+            <returns />
+        </member>
+        <member name="M:WWMFResampler.Finalize">
+Finalize must be called even when Initialize() is failed
+</member>
+        <member name="M:WWMFResampler.Drain(System.UInt32!System.Runtime.CompilerServices.IsLong,WWMFSampleData*)">
+@param resampleInputBytes input buffer bytes of Resample(). this arg is used to calculate expected output buffer size
+@param sampleData_return [out] set fresh (its data shold not be allocated yet) WWMFSampleData instance as this arg
+</member>
+        <member name="M:WWMFResampler.Resample(System.Byte!System.Runtime.CompilerServices.IsConst*,System.UInt32!System.Runtime.CompilerServices.IsLong,WWMFSampleData*)">
+@bytes buffer bytes. must be smaller than approx. 512KB to convert 44100Hz to 192000Hz
+</member>
+        <member name="M:WWMFResampler.Initialize(WWMFPcmFormat!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,WWMFPcmFormat!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32)">
+@param halfFilterLength conversion quality. 1(min) to 60 (max)
+</member>
+        <member name="M:WWMFSampleData.MoveAdd(WWMFSampleData*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+If this instance is not empty, rhs content is concatenated to this instance. rhs remains untouched.
+If this instance is empty, rhs content moves to this instance. rhs becomes empty.
+rhs.Release() must be called to release memory either way!
+
+</member>
+        <member name="M:WWMFSampleData.#ctor(System.Byte*,System.Int32)">
+@param aData must point new[] ed memory address
+</member>
+        <member name="T:WWMFSampleData">
+WWMFSampleData contains new[] ed byte buffer pointer(data) and buffer size(bytes).
+</member>
+        <member name="T:WWMFBitFormatType">
+sample data type. int or float
+it is compatible to WWBitFormatType on WasapiUser.h
+</member>
+        <member name="M:TextureManager.CopyTextureWithCPU(ID3D11Device*,ID3D11Texture2D*,ID3D11Texture2D**)">
+            <summary>
+Copy a texture via the CPU. This can be used to copy a texture created on one physical device to be rendered on another.
+</summary>
+            <param name="pDevice">The device with which to create the texture copy</param>
+            <param name="pTexture">The texture to copy</param>
+            <param name="ppTextureCopy">The copied texture</param>
+        </member>
+        <member name="M:TextureManager.CropTexture(ID3D11Texture2D*,tagRECT,ID3D11Texture2D**)">
+            <summary>
+Crops a texture to the given rectangle.
+</summary>
+            <param name="pTexture">The texture to crop</param>
+            <param name="cropRect">A rectangle to crop the texture to</param>
+            <param name="pCroppedFrame">The cropped texture</param>
+            <returns>S_OK if successful, S_FALSE is crop rect is larger than texture, error code on failure</returns>
+        </member>
+        <member name="M:GetMonitorName(HMONITOR__*)">
+            <summary>
+Gets the display name of the monitor corresponding to the monitor handle.
+</summary>
+            <param name="monitor">A handle to a monitor</param>
+            <returns>The display name of the monitor</returns>
+        </member>
+        <member name="M:GetCombinedRects(std.vector&lt;tagRECT,std.allocator&lt;tagRECT&gt;&gt;,tagRECT*,std.vector&lt;tagSIZE,std.allocator&lt;tagSIZE&gt;&gt;*)">
+            <summary>
+Creates a union of the input rectangles. The union is the smallest rectangle that contains all source rectangles.
+</summary>
+            <param name="inputs">A vector of RECT coordinates to combine.</param>
+            <param name="pOutRect">The combined union of input rectangles.</param>
+            <param name="pOffsets">Optional vector containing offsets corresponding to any gaps between input rects. </param>
+        </member>
+        <member name="M:EnumOutputs(std.vector&lt;IDXGIOutput**,std.allocator&lt;IDXGIOutput**&gt;&gt;*)">
+            <summary>
+Creates a list of all display adapters on the system.
+</summary>
+            <param name="pOutputs">A vector containing IDXGIOutput interfaces</param>
+        </member>
+        <member name="M:InitShaders(ID3D11Device*,ID3D11PixelShader**,ID3D11VertexShader**,ID3D11InputLayout**)">
+            <summary>
+Initialize shaders for drawing to screen
+</summary>
+            <param name="pDevice" />
+            <returns />
+        </member>
+        <member name="M:GetOutputRectsForRecordingSources(std.vector&lt;RECORDING_SOURCE**,std.allocator&lt;RECORDING_SOURCE**&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.vector&lt;std.pair&lt;RECORDING_SOURCE**,tagRECT&gt;,std.allocator&lt;std.pair&lt;RECORDING_SOURCE**,tagRECT&gt;&gt;&gt;*)">
+            <summary>
+Create the recording output rectangles for each source in the input, based on their coordinates and any custom size, crop or position rules.
+</summary>
+            <param name="sources">The recording sources to process</param>
+            <param name="outputs">A vector of pairs, containing the source and corresponding rectangle.</param>
+        </member>
+        <member name="M:GetMainOutput(IDXGIOutput**)">
+            <summary>
+Returns the main display output of the system.
+</summary>
+            <param name="ppOutput">The IDXGIOutput corresponding to the main output</param>
+        </member>
+        <member name="F:RECORDING_SOURCE_DATA.FrameCoordinates">
+            <summary>
+Describes the position and size of this recording source within the recording surface.
+</summary>
+        </member>
+        <member name="F:RECORDING_SOURCE.Position">
+            <summary>
+Optional custom position for the source frame.
+</summary>
+        </member>
+        <member name="F:RECORDING_SOURCE.SourceRect">
+            <summary>
+An optional custom area of the source to record. Must be equal or smaller than the source area. A smaller area will crop the source.
+</summary>
+        </member>
+        <member name="F:RECORDING_OVERLAY.Offset">
+            <summary>
+Optional custom offset for the source frame.
+</summary>
+        </member>
+        <member name="F:RECORDING_SOURCE_BASE.IsBorderRequired">
+            <summary>
+Toggles the display of a yellow border around recorded displays and windows when using Windows Graphics Capture on Windows 10 2104 or newer. If false, it will be hidden.
+</summary>
+        </member>
+        <member name="F:RECORDING_SOURCE_BASE.IsCursorCaptureEnabled">
+            <summary>
+Determines if the source is capturing mouse cursors. If false, it will be hidden.
+</summary>
+        </member>
+        <member name="F:RECORDING_SOURCE_BASE.IsVideoCaptureEnabled">
+            <summary>
+Determines if the source is capturing video. If false, it will be blacked out.
+</summary>
+        </member>
+        <member name="F:RECORDING_SOURCE_BASE.Anchor">
+            <summary>
+The anchor position for the content inside the parent frame.
+</summary>
+        </member>
+        <member name="F:RECORDING_SOURCE_BASE.OutputSize">
+            <summary>
+Optional custom output size of the source frame. May be both smaller or larger than the source.
+</summary>
+        </member>
+        <member name="F:RECORDING_SOURCE_BASE.CaptureFormatIndex">
+            <summary>
+The index for a MediaType describing a capture format. This is used to select e.g resolution from cameras.
+</summary>
+        </member>
+        <member name="F:RECORDING_SOURCE_BASE.Stretch">
+            <summary>
+Stretch mode for the frame
+</summary>
+        </member>
+        <member name="F:UniformToFill">
+            <summary />
+        </member>
+        <member name="F:Uniform">
+            <summary>The content is resized to fit in the destination dimensions while it preserves its native aspect ratio.</summary>
+        </member>
+        <member name="F:Fill">
+            <summary>The content is resized to fill the destination dimensions. The aspect ratio is not preserved. </summary>
+        </member>
+        <member name="F:None">
+            <summary>The content preserves its original size. </summary>
+        </member>
+        <member name="F:Screenshot">
+            <summary>Create a single screenshot.</summary>
+        </member>
+        <member name="F:Slideshow">
+            <summary>Record a slideshow of pictures. </summary>
+        </member>
+        <member name="F:Video">
+            <summary>Record to mp4 container in H.264/AVC or H.265/HEVC format. </summary>
+        </member>
+        <member name="M:MakeEven(System.Int32!System.Runtime.CompilerServices.IsLong,System.Int32)">
+            <summary>
+Forces the dimensions of n to be even by adding 1*modifier pixel if odd.
+</summary>
+        </member>
+        <member name="M:MakeRectEven(tagRECT*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32)">
+            <summary>
+Forces the dimensions of rect to be even by adding 1*modifier pixel if odd.
+</summary>
+        </member>
+    </members>
+</doc>
