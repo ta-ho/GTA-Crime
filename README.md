@@ -62,11 +62,6 @@ The code for each model in stage2 is in derectory ```stage2```. To train on VAD 
     cd/stage2/CLIP-TSA
     python main.py
     ```
-- RTFM
-    ```
-    cd/stage2/RTFM
-    python main.py
-    ```
 - UR-DMU
     ```
     cd/stage2/UR-DMU
@@ -77,6 +72,19 @@ The code for each model in stage2 is in derectory ```stage2```. To train on VAD 
     cd/stage2/MGFN
     python main.py
     ```
+- RTFM
+    ```
+    cd/stage2/RTFM
+    python main.py
+    ```
+
+## References
+We referenced the repos below for the code.
+* [VadCLIP](https://github.com/nwpu-zxr/VadCLIP)
+* [CLIP-TSA](https://github.com/joos2010kj/CLIP-TSA/tree/main)
+* [UR-DMU](https://github.com/henrryzh1/UR-DMU)
+* [MGFN](https://github.com/carolchenyx/MGFN.)
+* [RTFM](https://github.com/tianyu0207/RTFM/tree/main)
 
 ## Result on VAD models (AUC)
 | Method  |    UCF    | UCF+GTA(w/o DA)|UCF+GTA(w/ WGAN-GP)|UCF+GTA(w/ CycleGAN)|
