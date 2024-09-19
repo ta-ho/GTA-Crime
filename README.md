@@ -51,7 +51,7 @@ The code for stage 1 of our method can be found in the directory ```stage1```. T
     ```
 
 ## Stage2. VAD model training and testing
-The code for each model in stage2 is in derectory ```stage2```. To train on Video Anomaly Detection(WVAD) model, place the model trained on WGAN-GP/CycleGAN (from stage 1) to ```stage2/VadCLIP/weights```. Then, run the code below
+The code for each model in stage2 is in derectory ```stage2```. To train on VAD model, place the model trained on WGAN-GP/CycleGAN (from stage 1) to ```stage2/VadCLIP/weights```. Then, run the code below
 - VadCLIP
     ```
     cd/stage2/VadCLIP
