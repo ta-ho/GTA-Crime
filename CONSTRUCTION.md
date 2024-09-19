@@ -19,16 +19,17 @@
 - Copy 'ScriptHookV', 'ScriptHookVDotNet V3' files and Menyoo GTA5 trainer folder to 'Grand Theft Auto V' folder
 - Make 'Scripts' folder in 'Grand Theft Auto V' folder
 - Copy 'GTAVisionNative' files and necessary files created from construction code to 'Scripts' folder
-- Set 'gta_config.ini' file and copy to 'Scripts' folder
+- Set the 'gta_config.ini' file and copy to 'Scripts' folder
 
 ## Running GTA5
-- Press "PageUp" to activate plugin.
+- Press 'PageUp' to activate plugin.
 - F3 to enter the free camera mode.
 - '0' to set random seed.
-- F10 to save location. When you find a new location press 'L' to save it, a popup will ask for a name so you can find it again later. Make sure these names are unique. Using "[ ]" keys, you can cycle through already existing locations. Location files are saved in the path specified in the 'gta_config.ini' file.
-- F11 to assign ROI. Use 'U' to update the ROI (note: ROI is defined as a closed polygon). You can use 'K' to remove the last corner point/
+- F10 to save location. When you find a new location press 'L' to save it, a popup will ask for a name so you can find it again later. Make sure these names are unique. Using '[ ]' keys, you can cycle through already existing locations. Location files are saved in the path specified in the 'gta_config.ini' file.
+- F11 to assign ROI. Use 'U' to update the ROI (note: ROI is defined as a closed polygon). You can use 'K' to remove the last corner point.
 - Use 'N' to save all the locations. (required!!)
 - F12 to collect data.
 
 ## Video creation
-- 
+- After running GTA5, two viewpoint frames are created for each location in the path specified in 'gta_config.ini'.
+- Videos can be created by synthesizing the frames using the provided Python code.
