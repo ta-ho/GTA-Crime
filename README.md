@@ -49,6 +49,7 @@ The code for stage 1 of our method can be found in the directory ```stage1```. T
     cd stage1/cycgan
     python ucf_each.py
     ```
+After training is completed, the weights of the feature adaptor are used in stage2.
 
 ## Stage2. VAD model training and testing
 
