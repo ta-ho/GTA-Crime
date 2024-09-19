@@ -37,4 +37,4 @@
 
 ## Note
 - An error may occur when updating GTA5.
-- Most errors can be resolved by downloading the latest version of ScriptHookV and ScriptHookVDotNet V3.
+- Most errors can be resolved by downloading the latest version of 'ScriptHookV' and 'ScriptHookVDotNet V3'.
