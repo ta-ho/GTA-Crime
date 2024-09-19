@@ -33,7 +33,7 @@ This repo contains the Pytorch implementation of our paper:
 ## Synthetic Dataset Construction
 We extend the code from [GTA5Event](https://github.com/RicoMontulet/GTA5Event) to create fatal scenarios involving stabbing and shooting.
 
-Instructions for creating the dataset are in CONSTRUCTION.md.
+Instructions for creating the dataset are in [CONSTRUCTION.md](https://github.com/ta-ho/GTA-Crime/blob/main/CONSTRUCTION.md#gta-crime-construction).
 
 ## Result on VAD models (AUC)
 | Method  |    UCF    | UCF+GTA(w/o DA)|UCF+GTA(w/ WGAN-GP)|UCF+GTA(w/ CycleGAN)|
