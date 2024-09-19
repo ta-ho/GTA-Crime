@@ -8,7 +8,7 @@
 - others managed by Nuget
 
 ## Building C# code
-- Git clone '''"data_generation"''' code
+- Git clone '''data_generation''' code
 - Open .sin code in Visual Studio
 - Right click Solution 'GTACrime' itself and go to: properties -> Configuration Properties and set the configuration to Release for x64
 - Right click solution and click Build Solution
