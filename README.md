@@ -30,10 +30,28 @@ This repo contains the Pytorch implementation of our paper:
 >
 > [**UCF-Crime 10-crop CLIP features**](https://github.com/nwpu-zxr/VadCLIP)
 
+- Change the file paths to the download datasets above in ```list/ucf_CLIP_rgb.csv``` and ```list/newGTA.csv```.
+
 ## Synthetic Dataset Construction
 We extend the code from [GTA5Event](https://github.com/RicoMontulet/GTA5Event) to create fatal scenarios involving stabbing and shooting.
 
 Instructions for creating the dataset are in [CONSTRUCTION.md](https://github.com/ta-ho/GTA-Crime/blob/main/CONSTRUCTION.md#gta-crime-construction).
+
+## Stage1. Feature-level domain adaptation
+The code for stage 1 of our method can be found in the directory ```stage1```. To train the model with the default arguments, run the code below
+- using WGAN-GP loss
+    ```
+    cd stage1/wgan_gp
+    python main.py
+    ```
+- using WGAN-GP loss
+    ```
+    cd stage1/cycgan
+    python ucf_each.py
+    ```
+
+## Stage2. VAD model training and testing
+
 
 ## Result on VAD models (AUC)
 | Method  |    UCF    | UCF+GTA(w/o DA)|UCF+GTA(w/ WGAN-GP)|UCF+GTA(w/ CycleGAN)|
