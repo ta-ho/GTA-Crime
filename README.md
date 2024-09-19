@@ -6,7 +6,7 @@ This repo contains the Pytorch implementation of our paper:
 
 - **Submitted at ICASSP 2025.**
 
-![overall pipeline](./imgs/overall_pipeline.png)
+![overall pipeline](overall_pipeline.png)
 
 ## Enviroment
 - Python 3.12.4
