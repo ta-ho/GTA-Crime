@@ -20,6 +20,7 @@
 - Make 'Scripts' folder in 'Grand Theft Auto V' folder
 - Copy 'GTAVisionNative' files and necessary files created from construction code to 'Scripts' folder
 - Set the 'gta_config.ini' file and copy to 'Scripts' folder
+- In 'gta_config.ini', you can change various parameters such as save path, number of frames, occurrence events, and weather.
 
 ## Running GTA5
 - Press 'PageUp' to activate plugin.
@@ -33,3 +34,7 @@
 ## Video creation
 - After running GTA5, two viewpoint frames are created for each location in the path specified in 'gta_config.ini'.
 - Videos can be created by synthesizing the frames using the provided Python code.
+
+## Note
+- An error may occur when updating GTA5.
+- Most errors can be resolved by downloading the latest version of ScriptHookV and ScriptHookVDotNet V3.
