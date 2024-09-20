@@ -50,7 +50,7 @@ The code for stage 1 of our method can be found in the directory ```stage1```. T
     python ucf_each.py
     ```
 
-## Stage2. VAD model training and testing
+## Stage2. VAD model training
 The code for each model in stage2 is in derectory ```stage2```. To train on VAD model, place the model trained on WGAN-GP/CycleGAN (from stage 1) to ```stage2/VadCLIP/weights```. Then, run the code below
 - VadCLIP
     ```
@@ -76,6 +76,34 @@ The code for each model in stage2 is in derectory ```stage2```. To train on VAD 
     ```
     cd stage2/RTFM
     python main.py
+    ```
+
+## Testing
+To evaluate on VAD model after training, run the code below
+- VadCLIP
+    ```
+    cd stage2/VadCLIP
+    python ./src/ucf_test.py
+    ```
+- CLIP-TSA
+    ```
+    cd stage2/CLIP-TSA
+    python test_10crop.py
+    ```
+- UR-DMU
+    ```
+    cd stage2/UR-DMU
+    python ucf_infer.py
+    ```
+- MGFN
+    ```
+    cd stage2/MGFN
+    python test.py
+    ```
+- RTFM
+    ```
+    cd stage2/RTFM
+    python test_10crop.py
     ```
 
 ## References
