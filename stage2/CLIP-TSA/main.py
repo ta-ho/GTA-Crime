@@ -15,7 +15,7 @@ from dataset import Dataset
 from train import train
 from test_10crop import test
 from config import *
-from adaptor import FeatureAdaptor
+from feature_adaptor import FeatureAdaptor
 
 UNIQ_ID = strftime("%Y%m%d_%H%M%S", gmtime())
 
@@ -47,7 +47,7 @@ arg_parser.add_argument(
         "xd"
     ])
 )
-arg_parser.add_argument('--weight_path', default='weights/ucf_wgan_each_best.pth')
+arg_parser.add_argument('--weight_path', default='weights/ucf_unif_each_best.pth')
 
 # miscellaneous
 arg_parser.add_argument('--note', default='None', help='Note')
@@ -131,8 +131,10 @@ if __name__ == '__main__':
 
         model = model.to(device)
 
-        ckpt = Path(f"./ckpt/{dataset}/{UNIQ_ID}")
-        auc_record = Path(f"./auc_record/{dataset}/{UNIQ_ID}")
+        #ckpt = Path(f"./ckpt/{dataset}/{UNIQ_ID}")
+        #auc_record = Path(f"./auc_record/{dataset}/{UNIQ_ID}")
+        ckpt = Path(f"./ckpt/{dataset}")
+        auc_record = Path(f"./auc_record/{dataset}")
 
         ckpt.mkdir(exist_ok=True, parents=True)
         auc_record.mkdir(exist_ok=True, parents=True)
@@ -164,9 +166,9 @@ if __name__ == '__main__':
         auc = test(test_loader, model, args, None, device) # AUC
         quit()
 
-    auc,fight_auc, shoot_auc = test(test_loader, model, args, None, device)
+    auc = test(test_loader, model, args, None, device)
     
-    # define feature adaptor
+    ## define a feature adaptor
     netF = FeatureAdaptor(args.embed_dim)
     netF.load_state_dict(torch.load(args.weight_path))
     netF = netF.to(device)
@@ -211,19 +213,17 @@ if __name__ == '__main__':
         record = {}
 
         if step % 5 == 0 and step > 150:
-            auc, fight_auc, shoot_auc = test(test_loader, model, args, None, device)
+            auc = test(test_loader, model, args, None, device)
             test_info["epoch"].append(step)
             test_info["test_AUC"].append(auc)
-            test_info["test_fight_AUC"].append(fight_auc)
-            test_info["test_shoot_AUC"].append(shoot_auc)
 
             if test_info["test_AUC"][-1] > best_AUC:
                 best_AUC = test_info["test_AUC"][-1]
                 torch.save({
                     "model_state_dict": model.state_dict(),
                     "optimizer_state_dict": optimizer.state_dict()
-                }, str(ckpt / f"{args.model_name}-{step}-vit.pkl"))
-                save_best_record(test_info, str(auc_record /  f"{step}-step-AUC.txt"))
+                }, str(ckpt / f"{args.model_name}_best.pkl"))
+                save_best_record(test_info, str(auc_record /  f"best-AUC.txt"))
                 print("*" * 30 + "RECORD" + "*" * 30)
             
             test_info["best_test_AUC"].append(best_AUC)
@@ -240,6 +240,6 @@ if __name__ == '__main__':
         record["epoch"] = step
         record["metrics"] = log
 
-        wandb.log(record)
+        #wandb.log(record)
 
     torch.save({"model_state_dict": model.state_dict(), "optimizer_state_dict": optimizer.state_dict()}, str(ckpt / f"{args.model_name}_final.pkl"))
