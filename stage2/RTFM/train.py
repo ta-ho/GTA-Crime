@@ -112,9 +112,6 @@ def train(netF, ucf_nloader, ucf_aloader, gta_nloader, gta_aloader, model, batch
         loss_smooth = smooth(abn_scores, 8e-4)
         cost = loss_criterion(score_normal, score_abnormal, nlabel, alabel, feat_select_normal, feat_select_abn) + loss_smooth + loss_sparse
 
-        #viz.plot_lines('loss', cost.item())
-        #viz.plot_lines('smooth loss', loss_smooth.item())
-        #viz.plot_lines('sparsity loss', loss_sparse.item())
         optimizer.zero_grad()
         cost.backward()
         optimizer.step()

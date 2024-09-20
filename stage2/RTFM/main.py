@@ -111,7 +111,6 @@ if __name__ == '__main__':
 
         wandb.log({"AUC": auc, "best_AUC": best_AUC, "loss": loss}, step=step)
 
-        # 500 step마다 best auc 모델 불러오기
         if step % 1000 == 0:
             torch.save(model.state_dict(), './ckpt/' + args.dataset + '{}-i3d.pkl'.format(step))
             model.load_state_dict(torch.load('./ckpt/' + args.dataset + '{}-i3d.pkl'.format(step)))

@@ -16,11 +16,6 @@ class Dataset(data.Dataset):
                 self.rgb_list_file = 'list/UCF3_Test.list'
             else:
                 self.rgb_list_file = 'list/UCF3_Train.list'
-        elif self.dataset == 'XD':
-            if test_mode:
-                self.rgb_list_file = 'list/XD_Test.list'
-            else:
-                self.rgb_list_file = 'list/XD_Train.list'
 
 
         self.tranform = transform
@@ -36,50 +31,25 @@ class Dataset(data.Dataset):
             if self.dataset == 'UCF':
                 if self.is_normal:
                     self.list = self.list[72:]
-                    #print('normal list for UCF-Crime')
-                    #print(self.list)
                 else:
                     self.list = self.list[:72]
-                    #print('abnormal list for UCF-Crime')
-                    #print(self.list)
-
-            elif self.dataset == 'XD':
-                if self.is_normal:
-                    self.list = self.list[9525:]
-                    #print('normal list for XD-Violence')
-                    #print(self.list)
-                else:
-                    self.list = self.list[:9525]
-                    #print('abnormal list for XD-Violence')
-                    #print(self.list)
-            else:
-                if self.is_normal:
-                    self.list = self.list[1240:3860]
-                    #print('normal list for GTA')
-                    #print(self.list)
-                else:
-                    self.list = self.list[:1240] + self.list[3860:]
-                    #print('abnormal list for GTA')
-                    #print(self.list)
 
     def __getitem__(self, index):
 
-        label = self.get_label()  # get video level label 0/1
+        label = self.get_label() 
         features = np.load(self.list[index].strip('\n'), allow_pickle=True)
-        features = np.array(features, dtype=np.float32) # (10, 88, 1024)
-        features = features.transpose(0, 1, 2)  # [88, 10, 1024] ###
-        #print(f'features shape: {features.shape}')
+        features = np.array(features, dtype=np.float32)
+        features = features.transpose(1, 0, 2) 
         if self.tranform is not None:
             features = self.tranform(features)
         if self.test_mode:
             return features
         else:
             # process 10-cropped snippet feature
-            features = features.transpose(1, 0, 2)  # [10, B, T, F]
+            features = features.transpose(1, 0, 2) 
             divided_features = []
             for feature in features:
-                #print(f'feature shape in features: {feature.shape}')
-                feature = process_feat(feature, 32)  # divide a video into 32 segments
+                feature = process_feat(feature, 32) 
                 divided_features.append(feature)
             divided_features = np.array(divided_features, dtype=np.float32)
             return divided_features, label
@@ -125,32 +95,25 @@ class GTADataset(data.Dataset):
             if self.dataset == 'UCF':
                 if self.is_normal:
                     self.list = self.list[270:]
-                    #print('normal list for UCF-Crime')
-                    #print(self.list)
                 else:
                     self.list = self.list[270:]
-                    #print('abnormal list for UCF-Crime')
-                    #print(self.list)
 
 
     def __getitem__(self, index):
 
-        label = self.get_label()  # get video level label 0/1
+        label = self.get_label() 
         features = np.load(self.list[index].strip('\n'), allow_pickle=True)
-        features = np.array(features, dtype=np.float32) # (10, 88, 1024)
-        features = features.transpose(0, 1, 2)  # [88, 10, 1024] ###
-        #print(f'features shape: {features.shape}')
+        features = np.array(features, dtype=np.float32)
+        features = features.transpose(0, 1, 2)  
         if self.tranform is not None:
             features = self.tranform(features)
         if self.test_mode:
             return features
         else:
-            # process 10-cropped snippet feature
-            features = features.transpose(1, 0, 2)  # [10, B, T, F]
+            features = features.transpose(0, 1, 2)
             divided_features = []
             for feature in features:
-                #print(f'feature shape in features: {feature.shape}')
-                feature = process_feat(feature, 32)  # divide a video into 32 segments
+                feature = process_feat(feature, 32) 
                 divided_features.append(feature)
             divided_features = np.array(divided_features, dtype=np.float32)
             return divided_features, label
