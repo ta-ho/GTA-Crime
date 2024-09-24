@@ -28,7 +28,7 @@
 ## Running GTA5
 - Active FreeCam mode: ```F8``` -> ```Misc Options``` -> turn on ```FreeCam```
 - F3 to enter the free camera mode.
-- Press 'PageUp' to activate plugin.
+- Press 'PageUp' to activate GTACrime plugin.
 - '0' to set random seed. (required!!)
 - F10 to save location. When you find a new location press 'L' to save it, a popup will ask for a name so you can find it again later. Make sure these names are unique. Using '[ ]' keys, you can cycle through already existing locations. Location files are saved in the path specified in the ```gta_config.ini``` file.
 - F11 to assign ROI. Use 'U' to update the ROI (note: ROI is defined as a closed polygon). You can use 'K' to remove the last corner point.
