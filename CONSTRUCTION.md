@@ -16,16 +16,20 @@
  
 ## Preparation before running GTA5
 - Install Grand Theft Auto V
-- Copy ```ScriptHookV```, ```ScriptHookVDotNet V3``` files and ```Menyoo GTA5 trainer``` folder to ```Grand Theft Auto V``` folder
-- Make ```Scripts``` folder in ```Grand Theft Auto V``` folder
-- Copy ```GTAVisionNative``` files and necessary files created from construction code to ```Scripts``` folder
+- Copy ```ScriptHookV.dll``` and ```dinput8.dll``` files which are in downloaded ```ScriptHookV.zip```to ```Grand Theft Auto V``` folder
+- Copy ```all files``` which are in the downloaded ```ScripHookVDotNet.zip``` to ```Grand Theft Auto V``` folder except ```README```
+- Copy ```Menyoo.asi``` files and ```menyoostuff``` folder which are in downloaded ```MenyooSP.zip```to ```Grand Theft Auto V``` folder
+- Make ```scripts``` folder in ```Grand Theft Auto V``` folder
+- Copy ```GTAVisionNative.asi``` and ```GTAVisionNative.lib``` files which are in downloaded ```native64bit.zip``` files and necessary files created from ```data_generation``` to ```scripts``` folder
 - Set the ```gta_config.ini``` file and copy to ```Scripts``` folder
 - In ```gta_config.ini```, you can change various parameters such as save path, number of frames, occurrence events, and weather.
+- When editing the ```gta_config.ini``` file, **do not place comments in the middle**.
 
 ## Running GTA5
-- Press 'PageUp' to activate plugin.
+- Active FreeCam mode: ```F8``` -> ```Misc Options``` -> turn on ```FreeCam```
 - F3 to enter the free camera mode.
-- '0' to set random seed.
+- Press 'PageUp' to activate plugin.
+- '0' to set random seed. (required!!)
 - F10 to save location. When you find a new location press 'L' to save it, a popup will ask for a name so you can find it again later. Make sure these names are unique. Using '[ ]' keys, you can cycle through already existing locations. Location files are saved in the path specified in the ```gta_config.ini``` file.
 - F11 to assign ROI. Use 'U' to update the ROI (note: ROI is defined as a closed polygon). You can use 'K' to remove the last corner point.
 - Use 'N' to save all the locations. (required!!)
