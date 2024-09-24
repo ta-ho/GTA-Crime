@@ -21,7 +21,7 @@
 - Copy ```Menyoo.asi``` file and ```menyoostuff``` folder which are in downloaded ```MenyooSP.zip```to ```Grand Theft Auto V``` folder
 - Make ```scripts``` folder in ```Grand Theft Auto V``` folder
 - Copy ```GTAVisionNative.asi``` and ```GTAVisionNative.lib``` files which are in downloaded ```native64bit.zip``` files and necessary files created from ```data_generation``` to ```scripts``` folder
-- Set the ```gta_config.ini``` file and copy to ```Scripts``` folder
+- Set the ```gta_config.ini``` file and copy to ```scripts``` folder
 - In ```gta_config.ini```, you can change various parameters such as save path, number of frames, occurrence events, and weather.
 - When editing the ```gta_config.ini``` file, **do not place comments in the middle**.
 
