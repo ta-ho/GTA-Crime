@@ -43,6 +43,6 @@
 - An error may occur when updating GTA5.
 - Most errors can be resolved by downloading the latest version of ```ScriptHookV``` and ```ScriptHookVDotNet V3```.
 
-  (Files will be updated approximately 4-5 days after the game update.)
+  **(Files will be updated approximately 4-5 days after the game update.)**
 
 
