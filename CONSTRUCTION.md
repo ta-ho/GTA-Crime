@@ -18,7 +18,7 @@
 - Install Grand Theft Auto V
 - Copy ```ScriptHookV.dll``` and ```dinput8.dll``` files which are in downloaded ```ScriptHookV.zip```to ```Grand Theft Auto V``` folder
 - Copy ```all files``` which are in the downloaded ```ScripHookVDotNet.zip``` to ```Grand Theft Auto V``` folder except ```README```
-- Copy ```Menyoo.asi``` files and ```menyoostuff``` folder which are in downloaded ```MenyooSP.zip```to ```Grand Theft Auto V``` folder
+- Copy ```Menyoo.asi``` file and ```menyoostuff``` folder which are in downloaded ```MenyooSP.zip```to ```Grand Theft Auto V``` folder
 - Make ```scripts``` folder in ```Grand Theft Auto V``` folder
 - Copy ```GTAVisionNative.asi``` and ```GTAVisionNative.lib``` files which are in downloaded ```native64bit.zip``` files and necessary files created from ```data_generation``` to ```scripts``` folder
 - Set the ```gta_config.ini``` file and copy to ```Scripts``` folder
