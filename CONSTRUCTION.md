@@ -1,8 +1,8 @@
 # GTA-Crime construction
 ## Requirement
 - GTAVisionNative (compile from source [here](https://github.com/umautobots/GTAVisionExport/tree/master/native) or download x64 [here](https://github.com/umautobots/GTAVisionExport/files/1703454/native64bit.zip))
-- ScriptHookV (download [here](http://www.dev-c.com/gtav/scripthookv/))
-- ScriptHookVDotNet V3 (download [here](https://github.com/crosire/scripthookvdotnet/releases))
+- ScriptHookV (download [here](http://www.dev-c.com/gtav/scripthookv/) or [google drive](https://drive.google.com/file/d/1x_Kdb7mTJV0nVHzCczzBPdq0-L9VMPJr/view?usp=sharing))
+- ScriptHookVDotNet V3 (download [here](https://github.com/scripthookvdotnet/scripthookvdotnet-nightly/releases))
 - Menyoo GTA5 trainer (download [here](https://www.gta5-mods.com/scripts/menyoo-pc-sp))
 - Visual Studio
 - others managed by Nuget
