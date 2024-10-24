@@ -35,7 +35,7 @@ This repo contains the Pytorch implementation of our paper:
 ## Synthetic Dataset Construction
 We extend the code from [GTA5Event](https://github.com/RicoMontulet/GTA5Event) to create fatal scenarios involving stabbing and shooting.
 
-Instructions for creating the dataset are in [CONSTRUCTION.md](https://github.com/ta-ho/GTA-Crime/blob/main/CONSTRUCTION.md#gta-crime-construction).
+Instructions for creating the dataset are in [construction.pdf](https://github.com/ta-ho/GTA-Crime/blob/main/construction.pdf).
 
 ## Stage1. Feature-level domain adaptation
 The code for stage 1 of our method can be found in the directory ```stage1```. To train the model with the default arguments, run the code below
