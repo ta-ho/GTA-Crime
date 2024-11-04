@@ -93,11 +93,11 @@ def train(gta_normal_loader, gta_shooting_loader, gta_fighting_loader, ucf_norma
 
                 netF.zero_grad()
                 fake = netF(gta_features)
-                F = netD(fake)
-                F = F.mean()
+                FA = netD(fake)
+                FA = FA.mean()
                 cos_sim = F.cosine_similarity(fake, ucf_features, dim=2).mean()
-                F.backward(mone)
-                F_cost = -F
+                FA.backward(mone)
+                F_cost = -FA
                 optimizerF.step()
 
                 Wasserstein_D_list.append(Wasserstein_D.item())
