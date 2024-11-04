@@ -15,7 +15,7 @@ from dataset import Dataset
 from train import train
 from test_10crop import test
 from config import *
-from feature_adaptor import FeatureAdaptor
+from adaptor import FeatureAdaptor
 
 UNIQ_ID = strftime("%Y%m%d_%H%M%S", gmtime())
 
