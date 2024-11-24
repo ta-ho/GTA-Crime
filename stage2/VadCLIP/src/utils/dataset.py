@@ -23,7 +23,7 @@ class GTADataset(data.Dataset):
     def __getitem__(self, index):
         clip_feature = np.load(self.df.loc[index]['path'])
         if not self.test_mode:
-            clip_feature, clip_length = tools.process_feat_gta(clip_feature, self.clip_dim)
+            clip_feature, clip_length = tools.process_feat(clip_feature, self.clip_dim)
         else:
             clip_feature, clip_length = tools.process_split(clip_feature, self.clip_dim)
 
