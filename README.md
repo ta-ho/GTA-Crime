@@ -122,3 +122,6 @@ We referenced the repos below for the code.
 | MGFN    | 82.55 | 79.37  | 83.64 | 84.35 |
 | CLIP-TSA| 78.75 | 81.62  | 82.66 | 81.65 |
 | VadCLIP| 73.59 | 74.60   | 74.79 | 76.84 |
+
+## License
+GTA-Crime is licensed limiting any commercial use.
