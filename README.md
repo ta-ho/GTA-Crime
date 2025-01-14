@@ -123,5 +123,3 @@ We referenced the repos below for the code.
 | CLIP-TSA| 78.75 | 81.62  | 82.66 | 81.65 |
 | VadCLIP| 73.59 | 74.60   | 74.79 | 76.84 |
 
-## License
-GTA-Crime is licensed limiting any commercial use.
