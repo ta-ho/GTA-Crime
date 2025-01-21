@@ -4,8 +4,6 @@ This repo contains the Pytorch implementation of our paper:
 >
 > Seongho Kim, Sejong Ryu, Hyoukjun You, Je Hyeong Hong
 
-- **Submitted at ICASSP 2025.**
-
 ![overall pipeline](overall_pipeline.png)
 
 ## Enviroment
