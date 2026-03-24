@@ -1,7 +1,11 @@
 # GTA-Crime
+
 This repo contains the Pytorch implementation of our paper:
-> [**GTA-Crime: Leveraging Synthetic Video and Feature-Level Domain Adaptation for Enhanced Fatal Violence Detection**] [paper](https://ieeexplore.ieee.org/abstract/document/11084327?casa_token=XqY5BgtAq2sAAAAA:s9n3u7K3J5Jgr3w6zHkGrcfykozlz_QLsdnwRHiDuvilf9jm5_3F7UDOn7IMmDCs5sslMmYUAw)
->
+
+> **GTA-Crime: Leveraging Synthetic Video and Feature-Level Domain Adaptation for Enhanced Fatal Violence Detection**
+> 
+> [![Paper](https://img.shields.io/badge/Paper-ICIP2026-green)](https://ieeexplore.ieee.org/abstract/document/11084327?casa_token=XqY5BgtAq2sAAAAA:s9n3u7K3J5Jgr3w6zHkGrcfykozlz_QLsdnwRHiDuvilf9jm5_3F7UDOn7IMmDCs5sslMmYUAw)
+> 
 > Seongho Kim, Sejong Ryu, Hyoukjun You, Je Hyeong Hong
 
 ![overall pipeline](overall_pipeline.png)
